@@ -1,0 +1,21 @@
+<div class="bluetooth-btn-div">
+  <button (click)="requestDevice()">Request Device</button>
+</div>
+
+<div>
+  <h3>Device Details</h3>
+
+  <div *ngIf="!isError">
+    <p>
+      {{ "Device Name: " + (deviceName ? deviceName : "") }}
+    </p>
+    <p>
+      {{ "Battery Percent: " + (batteryPercent ? batteryPercent : "") }}
+    </p>
+  </div>
+  <div *ngIf="isError">
+    <p>
+      Unsupported Device
+    </p>
+  </div>
+</div>
